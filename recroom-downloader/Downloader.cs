@@ -25,6 +25,17 @@ namespace recroom_downloader
             p.Start();
             p.WaitForExit();
             File.WriteAllText($"_downloadedBuilds/{selected.Date.ToString("d MMMM yyyy HH:mm:ss")}/steam_appid.txt", "471710");
+            if (selected.Date > new DateTime(2018, 7, 13))
+            {
+                if (File.Exists($"_downloadedBuilds/{selected.Date.ToString("d MMMM yyyy HH:mm:ss")}/RecRoom.exe"))
+                {
+                    File.WriteAllText($"_downloadedBuilds/{selected.Date.ToString("d MMMM yyyy HH:mm:ss")}/StartInScreen.bat", "@echo off\r\nstart \"\" RecRoom.exe +forcemode:screen\r\nexit");
+                }
+                else
+                {
+                    File.WriteAllText($"_downloadedBuilds/{selected.Date.ToString("d MMMM yyyy HH:mm:ss")}/StartInScreen.bat", "@echo off\r\nstart \"\" Recroom_Release.exe +forcemode:screen\r\nexit");
+                }
+            }
         }
     }
 }
