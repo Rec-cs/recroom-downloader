@@ -40,7 +40,7 @@ namespace recroom.downloader
             {
                 Directory.CreateDirectory("_downloadedBuilds/");
             }
-            var rawInfo = JsonConvert.DeserializeObject<List<BuildInfoDownloaded>>(new WebClient().DownloadString("https://raw.githubusercontent.com/Rec-cs/recroom-downloader/refs/heads/main/data/builds.json"));
+            var rawInfo = JsonConvert.DeserializeObject<List<BuildInfoDownloaded>>(new WebClient().DownloadString("https://raw.githubusercontent.com/Rec-cs/recroom-downloader/refs/heads/master/data/buildlist.json"));
             foreach (var info in rawInfo)
             {
                 buildInfos.Add(new BuildInfo
