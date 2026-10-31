@@ -20,11 +20,17 @@ namespace recroom.downloader
                 string username = Console.ReadLine();
                 Console.Write("\nPlease enter your password for this account: ");
                 string password = Console.ReadLine();
-                File.WriteAllText("DepotDownloaderSettings.json", JsonConvert.SerializeObject(new SteamLoginInfo
+                Console.Write("\nPlease enter your PhotonRealtime appid: ");
+                string realtime = Console.ReadLine();
+                Console.Write("\nPlease enter your PhotonVoice appid: ");
+                string voice = Console.ReadLine();
+                File.WriteAllText("DepotDownloaderSettings.json", JsonConvert.SerializeObject(new AppSettings
                 {
                     Username = username,
                     Password = password,
-                    Preferred_MaxDownloads = 8
+                    Preferred_MaxDownloads = 8,
+                    PhotonRealtimeId = realtime,
+                    PhotonVoiceId = voice
                 }));
             }
             if (!File.Exists("DepotDownloader.exe"))
@@ -126,10 +132,12 @@ namespace recroom.downloader
         public string Date { get; set; }
         public string Manifest { get; set; }
     }
-    public class SteamLoginInfo
+    public class AppSettings
     {
         public string Username { get; set; }
         public string Password { get; set; }
         public int Preferred_MaxDownloads { get; set; }
+        public string PhotonRealtimeId { get; set; }
+        public string PhotonVoiceId { get; set; }
     }
 }
