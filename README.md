@@ -11,5 +11,5 @@ Program to easily download any and every version of RecRoom!
 # Notable Builds
 
 | Date(s) | Significance |
-|------|------|-------------|
+|------|-------------|
 | October 26th, 2016 | First build to **require** RecNet implementation |
