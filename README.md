@@ -12,4 +12,4 @@ Program to easily download any and every version of RecRoom!
 
 | Date(s) | Significance |
 |------|-------------|
-| October 26th, 2016 | First build to **require** RecNet implementation312321512353253456e35r6y345t6453tdfgdshbajhntrjhsdrtdhtsfrhbdhdrthsed |
+| October 26th, 2016 | First build to **require** RecNet implementation. |
